@@ -10,7 +10,7 @@ const props = defineProps({
     required: false,
     default: 'Cats found'
   },
-  title: {
+  subtitle: {
     type: String,
     required: false,
     default: 'Try the "Get Cat" button'
