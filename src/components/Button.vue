@@ -1,5 +1,25 @@
 <script setup>
-const props = defineProps({});
+const props = defineProps({
+  primary: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+  secondary: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+  content: {
+    type: String,
+    required: true,
+  },
+  disabled: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+});
 
 const buttonStyling = {
   primary:
@@ -10,5 +30,13 @@ const buttonStyling = {
 </script>
 
 <template>
-  <button type="button" />
+  <button
+    type="button"
+    :class="{
+      [buttonStyling.primary]: props.primary,
+      [buttonStyling.secondary]: props.secondary,
+    }"
+    :disabled="props.disabled"
+    v-text="props.content"
+  />
 </template>

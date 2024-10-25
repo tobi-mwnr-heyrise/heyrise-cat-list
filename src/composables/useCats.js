@@ -25,11 +25,15 @@ const useCats = () => {
     }
   };
 
-  const setCat = (cat) => {};
+  const setCat = (cat) => {
+    cats.value = [...cats.value, cat];
+  };
 
-  const clearCats = () => {};
+  const clearCats = () => {
+    cats.value = [];
+  };
 
-  return {};
+  return { isFetching, cats, getCat, setCat, clearCats };
 };
 
 export { useCats };
